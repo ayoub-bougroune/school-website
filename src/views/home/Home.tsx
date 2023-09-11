@@ -1,9 +1,13 @@
 import React from 'react'
 import Carousel from '../../components/carousel/Carousel'
 import ServiceItem from '../../components/ServiceItem/ServiceItem'
-import Categories from '../../components/Categories/Categories'
+import Features from '../../components/sections/Features'
+import FacilitySection from '../../components/sections/FacilitySection'
 import ContactSection from '../../components/contactSection/ContactSection'
-
+import TeacherProfile from '../../components/sections/TeacherProfile'
+import VideoSection from '../../components/video/VideoSection'
+import Testimonial from '../../components/sections/Testimonial'
+import OurClasses from '../../components/OurClasses/OurClasses'
 import { faGraduationCap, faGlobe, faHome, faBookOpen, faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import catImage from '../../assets/cat-4.jpg'; // Adjust the path based on your file structure
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,96 +16,74 @@ const Home: React.FC = () => {
   return (
     <>
       <Carousel />
-      <h4 className="text-2xl font-bold text-center mt-10 flex items-center justify-center  dark:text-black pb-2 md:hover:text-blue-700">Services</h4>
-      <div className="flex flex-col md:flex-row justify-center items-center bg-white rounded-lg mt-10 p-10 overflow-hidden">
-            <ServiceItem
-              icon={faGraduationCap}
-              title="Skilled Instructors"
-              description="Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam"
-            />
-            <ServiceItem
-              icon={faGlobe}
-              title="Online Classes"
-              description="Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam"
-            />
-            <ServiceItem
-              icon={faHome}
-              title="Home Projects"
-              description="Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam"
-            />
-            <ServiceItem
-              icon={faBookOpen}
-              title="Book Library"
-              description="Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam"
-            />
-      </div>
-      <h4 className="text-2xl font-bold text-center mt-10 flex items-center justify-center  dark:text-black pb-2 md:hover:text-blue-700">About Us</h4>
-      <div className="container-xxl mt-20 py-5">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            <div className="col-span-1 lg:col-span-1 wow fadeInUp" data-wow-delay="0.1s" style={{ minHeight: '400px' }}>
-              <div className="relative h-100 p-5 rounded-lg">
-                <img className="img-fluid position-absolute w-full h-full rounded-lg object-cover top-0 left-0" src={catImage} alt="" />
+      <div className="about-us bg-gray-100 mt-20 w-full">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 m-32">
+            <div className="col-md-6 wow fadeIn m-5">
+              <div className="heading-block m-5">
+                <h2 className="text-3xl font-semibold">Le Grand Univers privé</h2>
+                <h4 className="tagline text-xl font-medium">Prenez le bon départ</h4>
+              </div>
+              <p className="mt-4 m-5">
+                Là où Harmonie conforte épanouissement, éducation et enseignement, c’est bel et bien Le Grand Univers privé.
+                <br /><br />
+                Notre univers ne cesse de grandir par sa capacité à prendre en charge les sensibilités, les choix et les besoins de l’enfant, à s’appuyer sur ses multiples potentiels, à l’accompagner pour emprunter le chemin de la réussite, à cultiver l’autonomie et établir l’équilibre psychologique entre l’enfant grandissant et l’élève apprenant… à faire vivre joyeusement l’école !
+              </p>
+
+              <div className="mt-6 m-5">
+                <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                  <a href="/about-us">Qui sommes-nous ?</a>
+                </button>
               </div>
             </div>
-            <div className="col-span-1 lg:col-span-1 wow fadeInUp mt-40" data-wow-delay="0.3s">
-              <h1 className="mb-4 text-4xl font-semibold m-3">Welcome to eLEARNING</h1>
-              <p className="mb-4  m-3 mt-16">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-              <p className="mb-4  m-3 mt-10">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4 m-3 mt-10">
-                <p className="mb-0"><FontAwesomeIcon icon={faArrowRight} className="text-sky-500 me-3" />Skilled Instructors</p>
-                <p className="mb-0"><FontAwesomeIcon icon={faArrowRight} className="text-sky-500 me-3" />Online Classes</p>
-                <p className="mb-0"><FontAwesomeIcon icon={faArrowRight} className="text-sky-500 me-3" />International Certificate</p>
-                <p className="mb-0"><FontAwesomeIcon icon={faArrowRight} className="text-sky-500 me-3" />Skilled Instructors</p>
-                <p className="mb-0"><FontAwesomeIcon icon={faArrowRight} className="text-sky-500 me-3" />Online Classes</p>
-                <p className="mb-0"><FontAwesomeIcon icon={faArrowRight} className="text-sky-500 me-3" />International Certificate</p>
-              </div>
+
+            <div className="about-img col-md-6 wow zoom-in m-5 mt-10" data-wow-delay="0.2s">
+              <img
+                src="https://legrandunivers.ma/wp-content/uploads/2020/02/nous.jpg"
+                alt="Le Grand Univers privé"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
       </div>
-      <Categories />
-      <h4 className="text-2xl font-bold text-center mt-10 flex items-center justify-center  dark:text-black pb-2 md:hover:text-blue-700">Gallery</h4>
-
-  <div className="grid grid-cols-2 md:grid-cols-3 m-10 mt-10 gap-4">
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" alt=""/>
-    </div>
-    <div>
-        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt=""/>
-    </div>
-</div>
-    <ContactSection />
+      <Features />
+      <VideoSection />
+      <FacilitySection />
+      <TeacherProfile />
+      <OurClasses />
+      <Testimonial />
+      {/* <ContactSection /> */}
+      <div className='flex flex-row  justify-evenly items-center w-full h-96 bg-red-500'>
+        <div className="footer-widget col-span-4 md:col-span-4 m-10">
+          <div id="custom_html-2" className="widget-text widget-footer widget_custom_html">
+              <h4 className="text-xl m-5 text-white font-semibold">Le Grand Univers Privé</h4>
+              <div className="textwidget custom-html-widget"></div>
+          </div>
+          <div id="media_image-2" className="widget-footer widget_media_image">
+              <img width="300" height="158" src="https://legrandunivers.ma/wp-content/uploads/2021/05/Le-Grand-Univers.jpg" className="w-72 m-5 h-auto max-w-full" alt="" decoding="async" loading="lazy" />
+          </div>
+        </div>
+        <div className="footer-widget col-span-4 md:col-span-4">
+          <div id="custom_html-3" className="widget-text widget-footer widget_custom_html">
+              <h4 className="text-xl text-white font-semibold">Contactez-nous</h4>
+              <div className="textwidget custom-html-widget">
+                  <p className="text-white">Adresse : 71 av Mehdi Ben Barka, Souissi - Rabat</p>
+                  <p className="text-white">Tél.: +212 537 65 89 39</p>
+                  <p className="text-white">Mob.: +212 667 79 05 77</p>
+                  <p className="text-white">Email: contact@legrandunivers.ma</p>
+                   <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.821311046369!2d-6.848181884833282!3d33.9714320294318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76cb02b1d4763%3A0xf9712b13f2e239f9!2sGrand+Univers!5e0!3m2!1sen!2s!4v1466423707997"
+                    className="w-full"
+                    frameBorder="0"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    title="Google Map"
+                  ></iframe>
+              </div>
+          </div>
+        </div>
+      </div>
     </>    
   )
 }

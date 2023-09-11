@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-white bg w-full flex justify-center items-center dark:bg-gray-800 py-4">
+    <footer className="bg-white bg w-full flex justify-center items-center  py-4">
       <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2023 <a href="https://flowbite.com/" className="hover:underline">Flowbite™</a>. All Rights Reserved.
         </span>
         <ul className="flex items-center justify-center mt-4 md:mt-0">
           <li className="mx-2">
-            <Link to="#" className="text-white hover:text-gray-900">
+            <Link to="#" className="text-black hover:text-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -23,7 +23,7 @@ const Footer = () => {
             </Link>
           </li>
           <li className="mx-2">
-            <Link to="#" className="text-white hover:text-gray-900">
+            <Link to="#" className="text-black hover:text-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

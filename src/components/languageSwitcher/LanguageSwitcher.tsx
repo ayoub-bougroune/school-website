@@ -1,6 +1,5 @@
 import React from 'react';
-//import  MaFlag  from '../../assets/ma.svg';
-// import  EnglishFlag  from '../../assets/sh.svg';
+
 
 
 const LanguageSwitcher = () => {

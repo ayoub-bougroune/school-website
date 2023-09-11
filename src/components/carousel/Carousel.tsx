@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef  } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { slideData } from "../../constants/data"
+
 
 const slideInFromBottom = keyframes`
   0% {
@@ -24,10 +26,14 @@ const slideInFromTop = keyframes`
 `;
 
 const StyledH5 = styled.h5`
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: blue;
+  position: relative;
+  text-align: left;
+  margin-left: 4rem;
+  right: 20rem;
+  color: #fff;
   animation: ${slideInFromTop} 1s ease-in-out;
   
   @media (max-width: 768px) {
@@ -36,8 +42,12 @@ const StyledH5 = styled.h5`
 `;
 
 const StyledP = styled.p`
-  font-size: 1.25rem;
-  color: #007acc;
+  font-size: 2rem;
+  color: #fff;
+  position: relative;
+  text-align: left;
+  margin-left: 4rem;
+  right: 20rem;
   animation: ${slideInFromBottom} 1s ease-in-out;
 
     @media (max-width: 768px) {
@@ -45,37 +55,53 @@ const StyledP = styled.p`
   }
 `;
 
+let count = 0;
+let slideInterval: any;
 const Carousel = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+ const [currentIndex, setCurrentIndex] = useState(0);
+
+ const slideRef = useRef<any>(null);
+
+  const removeAnimation = () => {
+    slideRef.current.classList.remove("fade-anim");
+  };
+
+  useEffect(() => {
+    // slideRef.current.addEventListener("animationend", removeAnimation);
+    // slideRef.current.addEventListener("mouseenter", pauseSlider);
+    // slideRef.current.addEventListener("mouseleave", startSlider);
+
+    startSlider();
+     return () => {
+       pauseSlider();
+     };
+    // eslint-disable-next-line
+  }, []);
+
+  const startSlider = () => {
+    slideInterval = setInterval(() => {
+      handleNextSlide();
+    }, 9500);
+  };
+
+  const pauseSlider = () => {
+    clearInterval(slideInterval);
+  };
 
   const handlePrevSlide = () => {
     setActiveSlide((prevSlide) => (prevSlide === 0 ? 2 : prevSlide - 1));
   };
 
   const handleNextSlide = () => {
-    setActiveSlide((prevSlide) => (prevSlide === 2 ? 0 : prevSlide + 1));
+    setActiveSlide((prevSlide) => (prevSlide === 1 ? 0 : prevSlide + 1));
   };
 
-  const slideData = [
-      {
-        imageUrl: 'https://media.istockphoto.com/id/874279838/fr/photo/int%C3%A9rieur-de-la-salle-de-classe-moderne.jpg?s=170667a&w=0&k=20&c=hkA0tg0_xAGLlJLcsNVZMhyLuLiIWzmffnhnMTvMLGM=',
-        label: 'Welcome to Our School',
-        content: 'Explore a world of knowledge and growth.',
-      },
-      {
-        imageUrl: 'https://thumbs.dreamstime.com/b/ng-together-high-school-college-students-studying-reading-together-105156570.jpg',
-        label: 'Excellence in Education',
-        content: 'We are committed to delivering the best learning experience.',
-      },
-      {
-        imageUrl: 'https://media.istockphoto.com/id/1335448474/photo/public-school-exterior-front-of-a-brand-new-modern-education-building-photo-series.jpg?s=612x612&w=0&k=20&c=apJYH3Ou6CbORsturDZjPql5LrzEHOffNe-HhbO-eAk=',
-        label: 'A Vibrant Learning Community',
-        content: 'Join us in shaping a bright future for your child.',
-      },
-  ];
+
+
 
   return (
-    <div id="carouselExampleCaptions" className="relative">
+      <div id="carouselExampleCaptions" ref={slideRef}  className="relative mt-48">
       {/* ... Carousel indicators ... */}
     
       <div className="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0" data-te-carousel-indicators>
@@ -94,31 +120,19 @@ const Carousel = () => {
           ></button>
         ))}
       </div>
-      {/* Carousel items */}
-      {/* <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-            {slideData.map((slide, index) => (
-          <div
-            key={index}
-            className={`relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none ${
-              activeSlide === index ? 'block' : 'hidden'
-            }`}
-          >
-            <img src={slide.imageUrl} className="block w-full" alt={`Slide ${index + 1}`} />
-            <div className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
-              <h5 className="text-xl">{slide.label}</h5>
-              <p>{slide.content}</p>
-            </div>
-          </div>
-        ))}
-      </div> */}
       {slideData.map((slide, index) => (
         <div
           key={index}
           className={`relative w-full h-screen transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none ${
             activeSlide === index ? 'block' : 'hidden'
-          }`}
-        >
-          <img src={slide.imageUrl} className="block w-full h-full object-cover" alt={`Slide ${index + 1}`} />
+            }`}
+          style={{
+                  backgroundImage: `url(${slide.imageUrl})`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                }}
+          >
+          {/* <img src={slide.imageUrl}  className="block w-full h-full object-cover" alt={`Slide ${index + 1}`} /> */}
           <div className="absolute inset-0 flex items-center justify-center text-center text-white">
             <div>
               <StyledH5>{slide.label}</StyledH5>
@@ -128,7 +142,7 @@ const Carousel = () => {
         </div>
       ))}
       {/* Carousel controls - prev item */}
-      <button
+       <button
         className="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
         type="button"
         onClick={handlePrevSlide}
@@ -146,10 +160,10 @@ const Carousel = () => {
           </svg>
         </span>
         <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
-      </button>
+      </button> 
 
       {/* Carousel controls - next item */}
-      <button
+       <button
         className="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
         type="button"
         onClick={handleNextSlide}
@@ -167,8 +181,8 @@ const Carousel = () => {
           </svg>
         </span>
         <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
-      </button>
-    </div>
+      </button> 
+      </div>
   );
 };
 
