@@ -8,9 +8,7 @@ import TeacherProfile from '../../components/sections/TeacherProfile'
 import VideoSection from '../../components/video/VideoSection'
 import Testimonial from '../../components/sections/Testimonial'
 import OurClasses from '../../components/OurClasses/OurClasses'
-import { faGraduationCap, faGlobe, faHome, faBookOpen, faArrowRight} from '@fortawesome/free-solid-svg-icons';
-import catImage from '../../assets/cat-4.jpg'; // Adjust the path based on your file structure
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const Home: React.FC = () => {
   return (
