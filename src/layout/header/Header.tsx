@@ -47,8 +47,8 @@ const Header = () => {
              </li>
               <li className=" hover:bg-amber-400 w-20 flex items-center text-gray-900 justify-center h-40 hover:text-white">
               <Link
-                to="/pricing"
-                className="block "
+                to="/gallery"
+                className="block"
               >
                 Photo
               </Link>
