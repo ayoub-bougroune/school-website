@@ -3,8 +3,40 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-white bg w-full flex justify-center items-center  py-4">
-      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+    <div className="">
+    <footer className="w-full flex flex-row  justify-center items-center  bg-red-500  py-4">
+      <div className='flex  justify-evenly items-center'>
+        <div className="footer-widget col-span-4 md:col-span-4 m-10">
+          <div id="custom_html-2" className="widget-text widget-footer widget_custom_html">
+              <h4 className="text-xl m-5 text-white font-semibold">Le Grand Univers Privé</h4>
+              <div className="textwidget custom-html-widget"></div>
+          </div>
+          <div id="media_image-2" className="widget-footer widget_media_image">
+              <img width="300" height="158" src="https://legrandunivers.ma/wp-content/uploads/2021/05/Le-Grand-Univers.jpg" className="w-72 m-5 h-auto max-w-full" alt="" decoding="async" loading="lazy" />
+          </div>
+        </div>
+        <div className="footer-widget col-span-4 md:col-span-4">
+          <div id="custom_html-3" className="widget-text widget-footer widget_custom_html">
+              <h4 className="text-xl text-white font-semibold">Contactez-nous</h4>
+              <div className="textwidget custom-html-widget">
+                  <p className="text-white">Adresse : 71 av Mehdi Ben Barka, Souissi - Rabat</p>
+                  <p className="text-white">Tél.: +212 537 65 89 39</p>
+                  <p className="text-white">Mob.: +212 667 79 05 77</p>
+                  <p className="text-white">Email: contact@legrandunivers.ma</p>
+                   <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.821311046369!2d-6.848181884833282!3d33.9714320294318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76cb02b1d4763%3A0xf9712b13f2e239f9!2sGrand+Univers!5e0!3m2!1sen!2s!4v1466423707997"
+                    className="w-full"
+                    frameBorder="0"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    title="Google Map"
+                  ></iframe>
+              </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+          <div className="w-full mx-auto max-w-screen-xl p-4 bg-white md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2023 <a href="https://flowbite.com/" className="hover:underline">Flowbite™</a>. All Rights Reserved.
         </span>
@@ -37,7 +69,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-    </footer>
+    </div>
   );
 }
 
