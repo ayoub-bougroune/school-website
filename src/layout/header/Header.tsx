@@ -1,6 +1,6 @@
 import React,{ useState }  from 'react'
 import { Link } from 'react-router-dom';
-
+import { logo } from "../../constants/home"
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
 
@@ -12,7 +12,7 @@ const Header = () => {
           <div className="logo-image">
             <Link to="/" className="flex items-center"> 
               <img
-                src="https://legrandunivers.ma/wp-content/uploads/2021/05/Le-Grand-Univers.jpg"
+                src={logo}
                 className="image-logo w-full h-40"
                 alt="Flowbite Logo"
               />
@@ -55,7 +55,7 @@ const Header = () => {
              </li>
               <li className=" hover:bg-amber-400 w-40 flex items-center text-gray-900 justify-center h-40 hover:text-white">
                   <Link
-                    to="/services"
+                    to="/about"
                     className="block"
                   >
                   Qui sommes-nous?

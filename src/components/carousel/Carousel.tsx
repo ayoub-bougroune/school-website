@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef  } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { slideData } from "../../constants/data"
+import { sliderData } from "../../constants/home"
 
 
 const slideInFromBottom = keyframes`
@@ -105,7 +105,7 @@ const Carousel = () => {
       {/* ... Carousel indicators ... */}
     
       <div className="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0" data-te-carousel-indicators>
-        {slideData.map((_, index) => (
+        {sliderData.map((_, index) => (
           <button
             key={index}
             type="button"
@@ -120,7 +120,7 @@ const Carousel = () => {
           ></button>
         ))}
       </div>
-      {slideData.map((slide, index) => (
+      {sliderData.map((slide, index) => (
         <div
           key={index}
           className={`relative w-full h-screen transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none ${
@@ -132,7 +132,6 @@ const Carousel = () => {
                   backgroundRepeat: 'no-repeat',
                 }}
           >
-          {/* <img src={slide.imageUrl}  className="block w-full h-full object-cover" alt={`Slide ${index + 1}`} /> */}
           <div className="absolute inset-0 flex items-center justify-center text-center text-white">
             <div>
               <StyledH5>{slide.label}</StyledH5>

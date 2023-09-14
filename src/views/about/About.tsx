@@ -1,51 +1,55 @@
-import React from 'react'
-
+import React,{useState} from 'react'
+import Features from "../../components/sections/Features"
+import { title, obj, P1, P2, P3, P4, P5, P6 } from "../../constants/about"
 const About = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   return (
-     <main className=" flex justify-center items-center mt-36 sm:mt-80">
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <main className="flex w-full flex-col bg-gray-100  mt-52"> 
+      <div className="font-bold ml-40  p-7 text-4xl" >
+        <h1>{ title }</h1>
+      </div>
+      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-16 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8">
             <div className="lg:mb-0 mb-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800">
-                Our School's Story
-              </h2>
-              <p className="mt-3 text-base sm:text-lg text-gray-800">
-                At our school, our journey began with a vision to provide exceptional education that fosters creativity,
-                critical thinking, and a lifelong love for learning. Established in [Year], we have grown to become a
-                vibrant community that nurtures the potential of every student.
-              </p>
-              <p className="text-gray-700 my-4">
-                Over the years, we have dedicated ourselves to creating an environment where students not only excel
-                academically but also develop strong values, leadership skills, and a sense of responsibility.
-              </p>
-              <p className="text-gray-700">
-                Our commitment to quality education, experienced faculty, state-of-the-art facilities, and a diverse range
-                of extracurricular activities has made us a hub for holistic development.
-              </p>
+              <h2 className="text-xl sm:text-3xl bg-green-700 md:text-4xl lg:text-xl p-5 font-extrabold text-white" onClick={toggleDropdown}>
+                 {obj}
+            </h2>
+            {isDropdownOpen && (
+              <>
+                  <p className="mt-3 text-base sm:text-lg text-gray-800"><span className="bg-black  m-3">.</span>
+                   {P1}
+                  </p>
+                  <p className="text-gray-700 my-4"><span className="bg-black  m-3">.</span>
+                   {P2}
+                  </p>
+                  <p className="text-gray-700"><span className="bg-black  m-3">.</span>
+                   {P3}
+                  </p>
+              </>
+            )}
             </div>
             <div className="mt-8 lg:mt-0">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800">
-                Our School's Mission
+              <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-2xl font-extrabold text-gray-800">
+                { title }
               </h2>
               <p className="mt-3 text-base sm:text-lg text-gray-700">
-                Our mission at [School Name] is to empower students with knowledge, skills, and values that will enable
-                them to excel in an ever-changing world. We are committed to providing a nurturing environment that
-                promotes intellectual curiosity, creativity, and a sense of social responsibility.
+                { P4 }
               </p>
               <p className="text-gray-700 my-4">
-                Through innovative teaching methods, a holistic approach to education, and fostering a growth mindset,
-                we aim to develop well-rounded individuals who are prepared to contribute positively to society and
-                embrace challenges with confidence.
+               {P5}
               </p>
               <p className="text-gray-700">
-                Our dedicated educators and staff work collaboratively to instill a love for learning, critical thinking,
-                and a strong sense of ethics in each student, ensuring they are equipped to lead purposeful lives and
-                make meaningful contributions to the global community.
+               {P6}
               </p>
             </div>
           </div>
-        </div>
-      </main>
+      </div>
+      <Features />
+    </main>
   )
 }
 

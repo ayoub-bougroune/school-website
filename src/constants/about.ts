@@ -1,0 +1,8 @@
+export const title = "Qui Sommes-Nous?"
+export const obj = "LES OBJECTIFS"
+export const P1 = "At our school, our journey began with a vision to provide exceptional education that fosters creativity, critical thinking, and a lifelong love for learning. Established in [Year], we have grown to become a vibrant community that nurtures the potential of every student."
+export const P2 = "Over the years, we have dedicated ourselves to creating an environment where students not only excel academically but also develop strong values, leadership skills, and a sense of responsibility."
+export const P3 = " Our commitment to quality education, experienced faculty, state-of-the-art facilities, and a diverse range of extracurricular activities has made us a hub for holistic development."
+export const P4 = "Our mission at [School Name] is to empower students with knowledge, skills, and values that will enable them to excel in an ever-changing world. We are committed to providing a nurturing environment that promotes intellectual curiosity, creativity, and a sense of social responsibility."
+export const P5 = "Through innovative teaching methods, a holistic approach to education, and fostering a growth mindset,we aim to develop well-rounded individuals who are prepared to contribute positively to society and embrace challenges with confidence."
+export const P6 = "Our dedicated educators and staff work collaboratively to instill a love for learning, critical thinking,and a strong sense of ethics in each student, ensuring they are equipped to lead purposeful lives andmake meaningful contributions to the global community."
