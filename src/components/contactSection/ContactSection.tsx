@@ -1,4 +1,5 @@
 import React from 'react';
+import { P, adresses, phone, Email} from "../../constants/contact"
 
 const ContactSection = () => {
   return (
@@ -8,19 +9,16 @@ const ContactSection = () => {
               <div className="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
                 <h2 className="mb-6 text-3xl font-bold">Contact us</h2>
                 <p className="mb-6 text-neutral-700 dark:text-neutral-700">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Laudantium, modi accusantium ipsum corporis quia asperiores
-                  dolorem nisi corrupti eveniet dolores ad maiores repellendus enim
-                  autem omnis fugiat perspiciatis? Ad, veritatis.
+                 {P}
                 </p>
                 <p className="mb-2 text-neutral-700 dark:text-neutral-700">
-                  New York, 94126, United States
+                 {adresses}
                 </p>
                 <p className="mb-2 text-neutral-700 dark:text-neutral-700">
-                  + 01 234 567 89
+                  {phone}
                 </p>
                 <p className="mb-2 text-neutral-700 dark:text-neutral-700">
-                  info@gmail.com
+                  {Email}
                 </p>
               </div>
               <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">

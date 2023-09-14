@@ -1,12 +1,13 @@
 import React,{ useState }  from 'react'
 import { Link } from 'react-router-dom';
 import { logo } from "../../constants/home"
+import { Colors } from "../../constants/Colors"
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
     <header className='fixed top-0  left-0 right-0 z-30 h-52 bg-white site-header clearfix'>
-      <div className="w-full bg-green-700 p-1"></div>
+      <div className="w-full p-1" style={{backgroundColor: Colors.green}}></div>
        <nav className="bg-white border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="logo-image">
