@@ -40,7 +40,7 @@ export const Pr4 = "Une équipe ouverte et compétente prête à relever les dé
 
 export const img5 = "https://legrandunivers.ma/wp-content/uploads/2015/09/bars2.png"
 export const t5 = "Infrastructure adaptée"
-export const Pr5 = "Des espaces équipés et bien agencés favorisant l’épanouissement de l’enfant.</"
+export const Pr5 = "Des espaces équipés et bien agencés favorisant l’épanouissement de l’enfant."
 
 export const img6 = "https://legrandunivers.ma/wp-content/uploads/2020/02/hand-blanc.png"
 export const t6 = "Partenariat privilégié avec les parents d’élèves"
@@ -100,7 +100,7 @@ export const PA8 = '6 - 11'
 
 export const BGIMTestimonial = "https://legrandunivers.ma/wp-content/uploads/2020/02/bg_testimonial.jpg"
 export const carouselData =
-  [
+[
       {
         id:0,
         label: "Parent",
@@ -116,6 +116,14 @@ export const carouselData =
         label: 'Parent',
         content: "Mon enfant est épanoui et heureux aller à l'école chaque matin. Les enfants amusent, apprennent ",
       },
-    ];
-
-
+];
+export const OUrClassesDAta = [
+      { color: '#7fb881', title: T1, tagline: TG, paragraph: PA1, imgSrc: IMG1 },
+      { color: '#fec02a', title: T2, tagline: TG, paragraph: PA2, imgSrc: IMG2 },
+      { color: '#4800ff', title: T3, tagline: TG, paragraph: PA3, imgSrc: IMG3 },
+      { color: '#dd3333', title: T4, tagline: TG, paragraph: PA4, imgSrc: IMG4 },
+      { color: '#ffa723', title: T5, tagline: TG, paragraph: PA5, imgSrc: IMG5 },
+      { color: '#1d9fc6', title: T6, tagline: TG, paragraph: PA6, imgSrc: IMG6 },
+      { color: '#db325f', title: T7, tagline: TG, paragraph: PA7, imgSrc: IMG7 },
+      { color: '#41b237', title: T8, tagline: TG, paragraph: PA8, imgSrc: IMG8 },
+]
