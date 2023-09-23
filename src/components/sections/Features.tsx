@@ -3,7 +3,7 @@ import { img1, img2, img3, img4, img5, img6, t1, t2, t3, t4, t5, t6, Pr1, Pr2, P
 
 const Features = () => {
   return (
-    <div className="px-4 py-8 sm:py-16 mx-auto sm:max-w-xl md:max-w-full bg-red-50 w-full md:px-24 lg:px-8">
+    <div className="px-4 py-8 sm:py-16 mx-auto sm:max-w-xl md:max-w-full bg-red-50  md:px-24 lg:px-8">
       <div className="max-w-xl mb-10 md:mx-auto text-center lg:max-w-2xl md:mb-12">
         <h2 className="max-w-lg mb-6 font-sans text-2xl sm:text-3xl md:text-4xl font-bold leading-none tracking-tight text-gray-900 sm:mx-auto">
           <span className="relative inline-block">

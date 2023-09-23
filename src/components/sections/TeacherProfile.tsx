@@ -3,7 +3,7 @@ import { tl1, tl2, PR1, PR2, PR3, tImg1, tImg2 } from "../../constants/home"
 function TeacherProfile() {
   return (
 <div className="flex flex-col md:flex-row justify-center items-center py-6 md:py-14">
-  <div className="teacher-profile-tab w-full md:w-1/2 lg:w-1/3 p-4">
+  <div className="teacher-profile-tab md:w-1/2 lg:w-1/3 p-4">
     <div role="tabpanel" className="teacher-desc fade in active bg-white p-4 rounded-lg shadow" id="teamhome-1676">
       <div className="heading-block">
         <h3 className="text-lg md:text-xl font-semibold">{tl1}</h3>

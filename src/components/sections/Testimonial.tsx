@@ -31,25 +31,22 @@ const TestimonialSlider = () => {
     };
 
   return (
-      <div className={`testimonial with-bg-image flex flex-col justify-center items-center h-screen `} style={{
-          backgroundImage: `url(${BGIMTestimonial})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
+     <div className={`testimonial with-bg-image flex flex-col justify-center items-center h-screen`} style={{
+        backgroundImage: `url(${BGIMTestimonial})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
       }}>
-
-          <div className="testimonial-wrap text-center  wow fadeIn">
-            <Carousel showThumbs={false} showStatus={false}>
-              {carouselData.map((slide, index) => (
-                <div key={index}>
-                    <div className="m-20">
-                  <p className='text-white font-sans text-2xl'>{slide.content}</p>
-                    <h5 className='text-white font-sans'>{ slide.label }</h5>
-                    </div>
-                  </div>
-              ))}
-            </Carousel>
-          </div>
+        <div className="testimonial-wrap text-center wow fadeIn">
+          <Carousel showThumbs={false} showStatus={false}>
+            {carouselData.map((slide, index) => (
+              <div key={index} className="m-5 md:m-10">
+                <p className='text-white font-sans text-lg md:text-xl'>{slide.content}</p>
+              </div>
+            ))}
+          </Carousel>
         </div>
+    </div>
+
 
   );
 }
