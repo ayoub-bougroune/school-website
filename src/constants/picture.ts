@@ -1,4 +1,4 @@
-export const title = "Galerie Photo"
+export const title = "GALERIE PHOTO"
 export const galleryItems = [
     {
       title: 'Plongez avec nous dans la magie de la nuit sacrée du Ramadan',

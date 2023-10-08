@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import jsPDF from 'jspdf';
 
 
 const RegistrationForm = () => {
+    const form = useRef<any>();
     const [formData, setFormData] = useState({
             childName: '',
             childLastName: '',
@@ -20,58 +22,109 @@ const RegistrationForm = () => {
             motherSchoolLevel: '',
     });
 
-      const handleChange = (e: { target: { name: string; value: string; }; }) => {
+    const handleChange = (e: { target: { name: string; value: string; }; }) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-        const handleSubmit = (e: { preventDefault: () => void; }) => {
-            e.preventDefault();
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const doc = new jsPDF();
+
+        emailjs.sendForm(
+            'service_m0jd759',
+            'template_bg2p7gp',
+            form.current,
+            'oOGLrjaGmqv8emcJR')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        // const pdfBlob = doc.output('blob');
+
+        // const serviceId = "service_m0jd759";
+        // const userId = "user_m0jd759";
+        // const templateId = "template_m0jd759";
+
+        // emailjs.init(userId);
+
+        // const emailParams = {
+        //     to_email: "ayoubbougroune18@gmail.com", // Replace with your email
+        //     subject: "Registration Form Submission",
+        //     message: "Attached is the registration form.",
+        // };
+
+        // const attachments = {
+        // "registration_form.pdf": pdfBlob,
+        // };
         
-            const doc = new jsPDF();
+        // const attachmentsString = JSON.stringify(attachments);
+        
+        // try {
+        //     const response = await emailjs.send(serviceId, templateId, { ...emailParams, attachments: attachmentsString }, userId);
+        //     console.log("Email sent successfully", response);
+        // } catch (error) {
+        // console.error("Error sending email", error);
+        // }
 
-     
-            let yPos = 10;
+        let yPos = 30; // Starting position   
 
-          
-                const addText = (text:string, x = 10, lineHeight = 10) => {
+        const addCenteredHeader = (headerText: any , y = 10) => {
+            const textWidth = doc.getTextWidth(headerText); // Calculate text width
+            const xOffset = (doc.internal.pageSize.width - textWidth) / 2;
+            doc.text(headerText, xOffset, y);
+        };
+
+        const addText = (text: string | string[], x = 20, lineHeight = 15) => {
                 doc.text(text, x, yPos);
                 yPos += lineHeight;
-            };
+        };
 
-            // Add content to the PDF
-            addText(`Child Name: ${formData.childName}`);
-            addText(`Child Last Name: ${formData.childLastName}`);
-            addText(`Child Date of Birth: ${formData.childDOB}`);
-            addText(`Child School Level: ${formData.childSchoolLevel}`);
-            addText(`Child Last School: ${formData.childLastSchool}`);
-            addText(`Child Registration Level: ${formData.childRegistrationLevel}`);
-            addText(`Father Name: ${formData.fatherName}`);
-            addText(`Father Last Name: ${formData.fatherLastName}`);
-            addText(`Father Date of Birth: ${formData.fatherDOB}`);
-            addText(`Father School Level: ${formData.fatherSchoolLevel}`);
-            addText(`Mother Name: ${formData.motherName}`);
-            addText(`Mother Last Name: ${formData.motherLastName}`);
-            addText(`Mother Date of Birth: ${formData.motherDOB}`);
-            addText(`Mother School Level: ${formData.motherSchoolLevel}`);
+        // Add centered header
+        addCenteredHeader("Formulaire D'inscription", 20);
+        
+        // header with title of Enfant
+        addText("Enfant", 15, 15);
+        addText(`Nom : ${formData.childName}`);
+        addText(`Prénom : ${formData.childLastName}`);
+        addText(`Date de naissance : ${formData.childDOB}`);
+        addText(`Niveau scolaire actuel : ${formData.childSchoolLevel}`);
+        addText(`Le dernier établissement scolaire fréquenté : ${formData.childLastSchool}`);
+        addText(`Inscription 2023-2024 au niveau : ${formData.childRegistrationLevel}`);
+            
+        // header with title of Père
+        addText("Père", 15, 15);
+        addText(`Nom : ${formData.fatherName}`);
+        addText(`Prénom : ${formData.fatherLastName}`);
+        addText(`Date de naissance : ${formData.fatherDOB}`);
+        addText(`Niveau scolaire actuel : ${formData.fatherSchoolLevel}`);
+            
+        // header with title of Mère
+        addText("Mère", 15, 15);
+        addText(`Nom : ${formData.motherName}`);
+        addText(`Prénom : ${formData.motherLastName}`);
+        addText(`Date de naissance : ${formData.motherDOB}`);
+        addText(`Niveau scolaire actuel : ${formData.motherSchoolLevel}`);
 
-            console.log('Form Data:', formData);
-            // Save or display the PDF
-            doc.save('registration_form.pdf');
-
+        // Save or display the PDF
+        doc.save('registration_form.pdf');
     };
+
 
     
     return (
-        <main className="relative bg-gray-100 p-2">
+        <main className="relative bg-gray-100 mb-32 m-5 p-2">
           <form
                 action="/inscription2023/#wpcf7-f2786-p2-o1"
                 method="post"
-                className="flex flex-col md:flex-row md:space-x-6 md:ml-2 md:mr-2 md:mt-10 justify-center"
+                className="flex flex-col md:flex-row md:space-x-6 md:ml-2 md:mr-2 md:mt-0 justify-center"
                 aria-label="Formulaire de contact"
                 //noValidate={true}
                 data-status="init"
                 onSubmit={handleSubmit}
+                ref={form}
                 >
                 <div className="flex flex-col md:w-1/2">
                 <label className="font-semibold m-2">Enfant</label>
@@ -142,9 +195,8 @@ const RegistrationForm = () => {
                     onChange={handleChange}
                 />
                 </div>
-
                 <br />
-                    <div className="flex flex-col md:w-1/2">
+                <div className="flex flex-col md:w-1/2">
                         <label className="font-semibold m-2">Père</label>
                         <br />
                         <input
@@ -176,7 +228,7 @@ const RegistrationForm = () => {
                             className="w-full p-2 rounded border border-gray-300 mb-2"
                             aria-required="true"
                             aria-invalid="false"
-                            placeholder="Date de naissance jj/mm/aaaa*"
+                            placeholder="Téléphone*"
                             type="text"
                             name="fatherDOB"
                             value={formData.fatherDOB} // Bind the value to the state
@@ -188,14 +240,14 @@ const RegistrationForm = () => {
                             className="w-full p-2 rounded border border-gray-300 mb-2"
                             aria-required="true"
                             aria-invalid="false"
-                            placeholder="Niveau scolaire actuel*"
+                            placeholder="Email*"
                             type="text"
                             name="fatherSchoolLevel"
                             value={formData.fatherSchoolLevel} // Bind the value to the state
                             onChange={handleChange}
                         />
-                     </div>
-                     <div className="flex flex-col md:w-1/2">
+                </div>
+                <div className="flex flex-col md:w-1/2">
                         <label className="font-semibold m-2">Mère</label>
                         <br />
                         <input
@@ -227,7 +279,7 @@ const RegistrationForm = () => {
                             className="w-full p-2 rounded border border-gray-300 mb-2"
                             aria-required="true"
                             aria-invalid="false"
-                            placeholder="Date de naissance jj/mm/aaaa*"
+                            placeholder="Téléphone*"
                             type="text"
                             name="motherDOB"
                             value={formData.motherDOB} // Bind the value to the state
@@ -239,7 +291,7 @@ const RegistrationForm = () => {
                             className="w-full p-2 rounded border border-gray-300 mb-2"
                             aria-required="true"
                             aria-invalid="false"
-                            placeholder="Niveau scolaire actuel*"
+                            placeholder="Email*"
                             type="text"
                             name="motherSchoolLevel"
                             value={formData.motherSchoolLevel} // Bind the value to the state
@@ -252,12 +304,11 @@ const RegistrationForm = () => {
                         data-te-ripple-color="light">
                         ENVOYER
                 </button>
-                    </div>  
-                
-           
+                </div>  
           </form>
         </main>
   );
 };
 
 export default RegistrationForm;
+

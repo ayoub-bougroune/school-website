@@ -39,7 +39,7 @@ const TestimonialSlider = () => {
         <div className="testimonial-wrap text-center wow fadeIn">
           <Carousel showThumbs={false} showStatus={false}>
             {carouselData.map((slide, index) => (
-              <div key={index} className="m-5 md:m-10">
+              <div key={index} className="m-10 md:m-10">
                 <p className='text-white font-sans text-lg md:text-xl'>{slide.content}</p>
               </div>
             ))}

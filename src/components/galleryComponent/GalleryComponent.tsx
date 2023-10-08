@@ -3,8 +3,8 @@ import { galleryItems, title } from "../../constants/picture"
 
 const GalleryComponent = () => {
   return (
-    <main className="relative bg-gray-100 p-2">
-      <div className="flex justify-center items-center mt-8 md:mt-56">
+    <main className="relative bg-gray-100 p-5">
+      <div className="flex justify-start items-center m-10 md:mt-56">
         <h1 className="text-3xl text-black font-bold">{title}</h1>
       </div>
 

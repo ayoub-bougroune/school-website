@@ -140,7 +140,7 @@ const CarouselComponent = () => {
       </div>
     ))}
     {/* Carousel controls - prev item */}
-    <button
+    {/* <button
       className="absolute bottom-0 left-0 top-0 z-[1] flex w-1/6 sm:w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-in-out hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
       type="button"
       onClick={handlePrevSlide}
@@ -158,10 +158,10 @@ const CarouselComponent = () => {
         </svg>
       </span>
       <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
-    </button>
+    </button> */}
 
     {/* Carousel controls - next item */}
-    <button
+    {/* <button
       className="absolute bottom-0 right-0 top-0 z-[1] flex w-1/6 sm:w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-in-out hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
       type="button"
       onClick={handleNextSlide}
@@ -179,7 +179,7 @@ const CarouselComponent = () => {
         </svg>
       </span>
       <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
-    </button>
+    </button> */}
   </div>
   );
 };

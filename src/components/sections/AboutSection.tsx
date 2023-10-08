@@ -1,5 +1,6 @@
 import React from 'react'
 import { title1, title2, P1, P2, btn, img } from "../../constants/home"
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom if not already done
 
 const AboutSection = () => {
   return (
@@ -15,13 +16,14 @@ const AboutSection = () => {
                 {P1}
                 <br /><br />
                 {P2}
-              </p>
-
+            </p>
+            <Link to="/about">
               <div className="mt-6 m-5">
                 <button className="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600">
-                  <a href="/about-us">{btn}</a>
+                  {btn}
                 </button>
               </div>
+            </Link>
             </div>
 
             <div className="about-img col-md-6 wow zoom-in m-5 mt-10" data-wow-delay="0.2s">

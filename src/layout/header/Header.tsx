@@ -74,17 +74,17 @@ const Header = () => {
                   Inscription
                 </Link>
               </li>
-              <li className="hover-bg-amber-400 hover:text-white">
+              <li className="hover:bg-amber-400 hover:text-white">
                 <Link to="/gallery" className="block">
                   Photo
                 </Link>
               </li>
-              <li className="hover-bg-amber-400 hover:text-white">
+              <li className="hover:bg-amber-400 hover:text-white">
                 <Link to="/about" className="block">
                   Qui sommes-nous?
                 </Link>
               </li>
-              <li className="hover-bg-amber-400 hover:text-white">
+              <li className="hover:bg-amber-400 hover:text-white">
                 <Link to="/contact" className="block">
                   Contact
                 </Link>

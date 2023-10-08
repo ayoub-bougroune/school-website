@@ -1,2 +1,1 @@
-export const title = "Pour vous inscrire, il vous suffit de remplir ce formulaire (2minutes environ)."
-export const PA = "Pour vous inscrire, il vous suffit de remplir ce formulaire (2minutes environ)."
+export const title = "Pour vous inscrire, il vous suffit de remplir ce formulaire (30 secondes environ)."

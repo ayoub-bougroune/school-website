@@ -15,12 +15,12 @@ export const sliderData =
       },
     ];
 
-export const title1 = "Le Grand Univers privé" 
-export const title2 = "Prenez le bon départ" 
-export const P1 = "Là où Harmonie conforte épanouissement, éducation et enseignement, c’est bel et bien Le Grand Univers privé." 
-export const P2 = "Notre univers ne cesse de grandir par sa capacité à prendre en charge les sensibilités, les choix et les besoins de l’enfant, à s’appuyer sur ses multiples potentiels, à l’accompagner pour emprunter le chemin de la réussite, à cultiver l’autonomie et établir l’équilibre psychologique entre l’enfant grandissant et l’élève apprenant… à faire vivre joyeusement l’école !" 
+export const title1 = "Career Challenge" 
+export const title2 = "Éveillez votre potentiel, inspirez votre avenir." 
+export const P1 = "Bienvenue à Career Challenge, le lieu où les rêves prennent vie et où les esprits s'épanouissent! Notre centre est une toile vibrante de possibilités, offrant une pléthore d'activités allant de la croissance mentale à l'expression artistique, de la stratégie d'échecs à l'apprentissage des langues." 
+export const P2 = "Plongez dans un univers où chaque jour est une nouvelle aventure vers le succès et l'épanouissement. Rejoignez-nous pour tracer votre propre chemin vers l'excellence!" 
 export const btn = "Qui sommes-nous ?" 
-export const img = "https://legrandunivers.ma/wp-content/uploads/2020/02/nous.jpg"
+export const img = "https://imageupload.io/ib/MbxJbsfAchYRSnE_1696453545.jpg"
 
 export const img1 = "https://legrandunivers.ma/wp-content/uploads/2020/01/academix.png"
 export const t1 = "Pédagogie moderne centrée sur l’enfant"
@@ -52,14 +52,8 @@ export const vd = "https://www.youtube.com/embed/Os91iz6dVIs"
 
 
 export const bgImg = "https://legrandunivers.ma/wp-content/uploads/2020/02/bg_counter.jpg"
-export const Elèves = "Elèves"
-export const Classes = "Classes"
-export const CorpsPédagogique = "Corps pédagogique"
-export const EffectifTotal = "Effectif total"
-export const nb1 = 320
-export const nb2 = 18
-export const nb3 = 45
-export const nb4 = 65
+export const Elèves = "Avec vous depuis 2016"
+
 
 export const tl1 = "Mme Leilya Kabbaj"
 export const PR1 = "Position"
@@ -78,24 +72,24 @@ export const IMG6 = "https://legrandunivers.ma/wp-content/uploads/2020/01/ROBOTI
 export const IMG7 = "https://legrandunivers.ma/wp-content/uploads/2020/01/CALCUL-MENTAL-287x216.jpg"
 export const IMG8 = "https://legrandunivers.ma/wp-content/uploads/2015/09/classes1-large-287x216.jpg"
 
-export const T1 = "Classe Montessori"
-export const T2 = "Méthode des Alphas"
-export const T3 = "Le Yoga"
-export const T4 = "Théâtre"
-export const T5 = "Psychomotricité"
-export const T6 = "Robotique"
-export const T7 = "Calcul mental"
-export const T8 = "Devoirs en autonomie"
-export const TG = "Age Group"
+export const T1 = "Programme Développement Mentale "
+export const T2 = "Club échecs"
+export const T3 = "Ateliers de peinture"
+export const T4 = "Algorithmique"
+export const T5 = "Club de Vacances"
+export const T6 = "Garde prépa Junior"
+export const T7 = "Anglais"
+export const T8 = "Soutien scolaire"
+export const TG = "Age"
 
-export const PA1 = '2 - 5'
-export const PA2 = '4 - 5'
-export const PA3 = '2 - 11'
-export const PA4 = '6 - 11'
-export const PA5 = '2 - 5'
-export const PA6 = '6 - 11'
-export const PA7 = '6 - 11'
-export const PA8 = '6 - 11'
+export const PA1 = 'à partir de 5 ans'
+export const PA2 = 'Adultes et Enfants +5ans'
+export const PA3 = 'à partir de 5 ans'
+export const PA4 = 'à partir de 5 ans'
+export const PA5 = 'à partir de 5 ans'
+export const PA6 = 'à partir de 5 ans'
+export const PA7 = 'Adultes et Enfants'
+export const PA8 = 'Adultes et Enfants'
 
 
 export const BGIMTestimonial = "https://legrandunivers.ma/wp-content/uploads/2020/02/bg_testimonial.jpg"
