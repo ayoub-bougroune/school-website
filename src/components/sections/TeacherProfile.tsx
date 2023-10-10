@@ -17,7 +17,7 @@ function TeacherProfile() {
             <p className="mt-2 text-slate-500">Looking to take your team away on a retreat to enjoy awesome food and take in some sunshine? We have a list of places to do just that.</p>
           </div>
         </div>
-    </div>
+      </div>
       {/* <div className="flex flex-col md:flex-row justify-center items-center py-6 md:py-14">  
           <div className="teacher-profile-tab md:w-1/2 lg:w-1/3 p-4">
           <div role="tabpanel" className="teacher-desc fade in bg-white p-4 rounded-lg shadow" id="teamhome-1662">

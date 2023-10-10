@@ -13,8 +13,8 @@ const TestimonialSlider = () => {
      return () => {
        pauseSlider();
      };
-    // eslint-disable-next-line
-  }, []);
+
+    }, []);
 
   const startSlider = () => {
     slideInterval = setInterval(() => {
@@ -37,11 +37,19 @@ const TestimonialSlider = () => {
         backgroundRepeat: 'no-repeat',
       }}>
         <div className="testimonial-wrap text-center wow fadeIn">
-          <Carousel showThumbs={false} showStatus={false}>
-            {carouselData.map((slide, index) => (
-              <div key={index} className="m-10 md:m-10">
-                <p className='text-white font-sans text-lg md:text-xl'>{slide.content}</p>
+          <Carousel showThumbs={false} showStatus={false} showArrows={false} showIndicators={false}>
+          {carouselData.map((slide, index) => (
+            <>
+              <div key={index} className={`m-5 md:m-10 ${
+                      activeSlide === index ? 'block' : 'hidden'
+                    } ${window.innerWidth <= 768 ? 'mobile-image' : ''}`}>
+                <p className='text-white font-sans text-lg md:text-xl'>"{slide.content}"</p>
               </div>
+              <div className="flex justify-center items-center flex-col">
+                  <div className="border-b-2 w-14 border-white"></div>
+                  <span className="font-medium text-lg text-white mt-5 mb-5">PARENT</span>
+              </div>
+            </>
             ))}
           </Carousel>
         </div>

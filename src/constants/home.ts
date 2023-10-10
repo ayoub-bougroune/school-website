@@ -5,13 +5,15 @@ export const sliderData =
         id:0,
         imageUrl: 'https://legrandunivers.ma/wp-content/uploads/2023/06/h-scaled.jpg',
         label: "Les inscriptions sont ouvertes",
-        content: 'Explore a world of knowledge and growth.',
+        content: "Explore a world of knowledge and growth.",
+        btnText: "INSCRiVEZ-VOUS" 
       },
       {
         id:1,    
         imageUrl: 'https://legrandunivers.ma/wp-content/uploads/2023/05/1QRYQhq0GCyCncAMcg7QJTA.jpg',
         label: 'Excellence in Education',
         content: 'We are committed to delivering the best learning experience.',
+        btnText: "ACTIVITÉS"
       },
     ];
 
@@ -97,17 +99,14 @@ export const carouselData =
 [
       {
         id:0,
-        label: "Parent",
-        content: 'est une école que je recommande à mon entourage. est un vrai bonheur avoir une équipe souriante et sur qui nous pouvons compter pour confier nos enfants',
+        content: 'est une école que je recommande à mon entourage.',
       },
       {
         id:1,    
-        label: 'Parent',
         content: 'Mon fils de bientôt 6 ans est scolarisé depuis ses 2 ans au Grand Univers et en suis très satisfaite.',
       },
       {
-        id:3,    
-        label: 'Parent',
+        id:2,    
         content: "Mon enfant est épanoui et heureux aller à l'école chaque matin. Les enfants amusent, apprennent ",
       },
 ];

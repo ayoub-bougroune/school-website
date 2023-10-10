@@ -1,7 +1,10 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import ContactSection from '../../components/contactSection/ContactSection'
 
 const Contact = () => {
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
     <ContactSection/>  

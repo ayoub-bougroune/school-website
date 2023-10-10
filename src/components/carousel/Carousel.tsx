@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef  } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { sliderData } from "../../constants/home"
+import { useNavigate } from 'react-router-dom';
 
 const slideInFromBottom = keyframes`
   0% {
@@ -27,10 +28,7 @@ const StyledH5 = styled.h5`
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  position: relative;
-  text-align: left;
-  margin-left: 4rem;
-  right: 20rem;
+  text-align: center;
   color: #fff;
   animation: ${slideInFromTop} 1s ease-in-out;
   
@@ -57,6 +55,23 @@ const StyledP = styled.p`
 let slideInterval: any;
 const CarouselComponent = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = (slide: { label: any; }) => {
+    // Check which slide is active and navigate accordingly
+    switch (slide.label) {
+      case 'Les inscriptions sont ouvertes':
+        navigate('/signUP');
+        break;
+      case 'Activities':
+        navigate('/activities');
+        break;
+      // Add more cases for other slides as needed
+      default:
+        console.log('Default functionality');
+    }
+  };
 
  const slideRef = useRef<any>(null);
 
@@ -104,41 +119,47 @@ const CarouselComponent = () => {
         className="relative mt-4 sm:mt-8 md:mt-16 lg:mt-24 xl:mt-32">
   {/* ... Carousel indicators ... */}
 
-    <div className="absolute bottom-0 left-0 right-0 z-[2] mx-4 sm:mx-[15%] mb-2 sm:mb-4 flex list-none justify-center p-0" data-text-carousel-indicators>
-      {sliderData.map((_, index) => (
-        <button
-          key={index}
-          type="button"
-          data-te-target="#carouselExampleCaptions"
-          data-te-slide-to={index}
-          className={`mx-1 sm:mx-[3px] box-content h-2 sm:h-[3px] w-8 sm:w-[30px] flex-initial cursor-pointer border-0 border-y-[5px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] ${
-            activeSlide === index ? 'opacity-100' : 'opacity-50'
-          } transition-opacity duration-300 ease-in-out`}
-          onClick={() => setActiveSlide(index)}
-          aria-current={activeSlide === index}
-          aria-label={`Slide ${index + 1}`}
+      <div className="absolute bottom-0 left-0 right-0 z-[2] mx-4 sm:mx-[15%] mb-2 sm:mb-4 flex list-none justify-center p-0" data-text-carousel-indicators>
+        {sliderData.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            data-te-target="#carouselExampleCaptions"
+            data-te-slide-to={index}
+            className={`mx-1 sm:mx-[3px] box-content h-2 sm:h-[3px] w-8 sm:w-[30px] flex-initial cursor-pointer border-0 border-y-[5px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] ${
+              activeSlide === index ? 'opacity-100' : 'opacity-50'
+            } transition-opacity duration-300 ease-in-out`}
+            onClick={() => setActiveSlide(index)}
+            aria-current={activeSlide === index}
+            aria-label={`Slide ${index + 1}`}
 
-        ></button>
-      ))}
-    </div>
-    {sliderData.map((slide, index) => (
-      <div
-        key={index}
-        className={`relative  h-screen sm:h-[75vh] lg:h-screen transition-transform duration-300 ease-in-out ${
-                    activeSlide === index ? 'block' : 'hidden'
-                  } ${window.innerWidth <= 768 ? 'mobile-image' : ''}`}
-        style={{
-          backgroundImage: `url(${slide.imageUrl})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <div className="absolute inset-0 flex flex-col items-center justify-center m-28 text-white">
-          <StyledH5>{slide.label}</StyledH5>
-          <StyledP>{slide.content}</StyledP>
-        </div>
+          ></button>
+        ))}
       </div>
-    ))}
+      {sliderData.map((slide, index) => (
+        <div
+          key={index}
+          className={`relative  h-screen sm:h-[75vh] lg:h-screen transition-transform duration-300 ease-in-out ${
+                      activeSlide === index ? 'block' : 'hidden'
+                    } ${window.innerWidth <= 768 ? 'mobile-image' : ''}`}
+          style={{
+            backgroundImage: `url(${slide.imageUrl})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <div className="absolute inset-0 flex flex-col items-center justify-center m-28 text-white">
+            <StyledH5>{slide.label}</StyledH5>
+            <StyledP>{slide.content}</StyledP>
+            <button
+                className="bg-blue-500 text-white hover:bg-white hover:text-black px-5 py-3 mt-8 rounded-md"
+                onClick={() => handleButtonClick(slide)}
+              >
+                {slide.btnText || 'Click me'}
+            </button>
+          </div>
+        </div>
+      ))}
     {/* Carousel controls - prev item */}
     {/* <button
       className="absolute bottom-0 left-0 top-0 z-[1] flex w-1/6 sm:w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-in-out hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"

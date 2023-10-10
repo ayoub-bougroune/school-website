@@ -3,21 +3,29 @@ import { P, adresses, phone, Email} from "../../constants/contact"
 
 const ContactSection = () => {
   return (
-        <div className="container mt-60 my-32 mx-auto md:px-6">
-          <section className="mb-32">
+    <div className="container mt-60 my-32 mx-auto md:px-6">
+        <div className="text-center mt-10 md:text-left ">
+        <h1 className="font-bold text-2xl md:text-4xl ml-2 md:ml-40 p-4 md:p-7 ">
+          Contact
+        </h1>
+        <div className="border-b-4 w-14 ml-48 border-gray-500"></div>
+       </div>
+          <section className="mb-32 m-40">
             <div className="flex flex-wrap">
               <div className="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
-                <h2 className="mb-6 text-3xl font-bold">Contact us</h2>
+                <h2 className="mb-6 text-lg font-bold">The school is closed in August. It will open on September 1, 2022 from 9 a.m. to 4:30 p.m.</h2>
                 <p className="mb-6 text-neutral-700 dark:text-neutral-700">
                  {P}
                 </p>
-                <p className="mb-2 text-neutral-700 dark:text-neutral-700">
+                <span className="font-bold text-2xl text-black mt-5 mb-5">ADDRESS</span>
+                <p className="mb-5 mt-5 text-neutral-700 dark:text-neutral-700">
                  {adresses}
                 </p>
-                <p className="mb-2 text-neutral-700 dark:text-neutral-700">
-                  {phone}
+                <span className="font-bold text-2xl text-black mt-5 mb-5">CONTACT US</span>
+                <p className="mb-5 mt-5 text-neutral-700 dark:text-neutral-700">
+                 Tel:{phone}
                 </p>
-                <p className="mb-2 text-neutral-700 dark:text-neutral-700">
+                <p className="mb-2 mt-5 text-neutral-700 dark:text-neutral-700">
                   {Email}
                 </p>
               </div>
@@ -75,7 +83,7 @@ const ContactSection = () => {
               </div>
             </div>
           </section>
-        </div>
+       </div>
   );
 };
 

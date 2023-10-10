@@ -1,12 +1,18 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import Features from "../../components/sections/Features"
 import { title, obj, P1, P2, P3, P4, P5, P6 } from "../../constants/about"
+import { img } from "../../constants/home"
+
 const About = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <main className="flex w-full flex-col bg-gray-100  mt-52"> 
        <div className="text-center mt-10 md:text-left">
@@ -15,8 +21,16 @@ const About = () => {
         </h1>
       </div>
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-16 lg:px-8">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-            <div className="lg:mb-0 mb-8">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-8">
+          
+            <div className="about-img col-md-6 wow zoom-in" data-wow-delay="0.2s">
+              <img
+                src={img}
+                alt="Le Grand Univers privé"
+                className="w-full h-auto"
+              />
+            </div>
+            {/* <div className="lg:mb-0 mb-8">
               <h2 className="text-xl sm:text-3xl bg-green-700 md:text-4xl lg:text-xl p-5 font-extrabold text-white" onClick={toggleDropdown}>
                  {obj}
             </h2>
@@ -33,7 +47,7 @@ const About = () => {
                   </p>
               </>
             )}
-            </div>
+            </div> */}
             <div className="mt-8 lg:mt-0">
               <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-2xl font-extrabold text-gray-800">
                 { title }

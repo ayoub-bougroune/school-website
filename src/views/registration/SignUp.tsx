@@ -1,7 +1,10 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm"
 import { title } from "../../constants/register"
 const SignUp = () => {
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     return (
     <>    
      <div className="flex flex-col h-auto sm:h-60 mt-48 items-center pt-5 sm:pt-0  bg-gray-50">
